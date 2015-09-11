@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
+<meta name="list" content="width=device-width, initial-scale=1">
 <title> Sign Up </title> 
 
 </head>
 
 <body>
 	<form>
-		Name: <input type="text" id="txtName" required><br>
+		<label for="txtName">Name:</label> <input type="text" id="txtName" required><br>
 		Last Name: <input type="text" id="txtLastName" required><br>
 		Email: <input type="email" id="txtEmail" required placeholder="Enter a valid email address"><br>
 		Birthday: <input type="date" id="txtBirthday" required><br>

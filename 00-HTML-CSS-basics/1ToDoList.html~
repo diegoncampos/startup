@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <title> My todo list </title> 
-
+<meta name="list" content="width=device-width, initial-scale=1">
 </head>
 
 <body>

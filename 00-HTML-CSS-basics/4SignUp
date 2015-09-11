@@ -7,10 +7,10 @@
 
 <body>
 	<form>
-		Name: <input type="text" id="txtName" required><br>
-		Last Name: <input type="text" id="txtLastName" required><br>
-		Email: <input type="email" id="txtEmail" required placeholder="Enter a valid email address"><br>
-		Birthday: <input type="date" id="txtBirthday" required><br>
+		<label for="txtName">Name:</label> <input type="text" id="txtName" required><br>
+		<label for="txtLastName">Last Name:</label> <input type="text" id="txtLastName" required><br>
+		<label for="txtEmail">Email:</label> <input type="email" id="txtEmail" required placeholder="Enter a valid email address"><br>
+		<label for="txtBirthday">Birthday:</label> <input type="date" id="txtBirthday" required><br>
                 Favourite Sport:		
 		<select>
 			<option value="judo">Judo</option>
@@ -21,7 +21,7 @@
 			<option value="tennis">Tennis</option>
 			<option value="golf">Golf</option>
 		</select><br>
-		Bio:
+		<label for="txtArea">Bio:</label>
 		<textarea id="txtArea" required>Small Bio</textarea><br>
 		<input type="submit" value="Submit">
 		<input type="reset" value="Clear">
