@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+<title>JavaScipt jQuery Test</title>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<script type="text/javascript">    
+	$(document).ready(function(){
+
+        $('#Hidden').fadeIn(3000, function(){
+        	$('.alias').focus();
+        });        
+
+    });
+
+	$(document).ready(function(){
+		
+		$("#button").click( function()
+           {
+
+           	// var msg = $.ajax({type: "GET", url: "http://bootcamp.aws.af.cm/welcome/DiegoCampos", async: false}).responseText;
+      
+            //  //alert(msg);
+            //  $( "#Hidden" ).after( msg + "<br>");
+
+           
+
+
+			var msg = $.getJSON('http://bootcamp.aws.af.cm/welcome/DiegoCampos', function(datos){
+
+				//$( "#Hidden" ).after( datos.response + "<br>"); 
+				$( "#Hidden" ).after( datos.response + "<br>");
+
+
+			     });
+			
+			msg.error(function(){
+
+				$( "#Hidden" ).css("color", "red").after( "<p style='color:red'>Error! Check the url!</p>" + "<br>");
+			
+
+
+			});
+     
+
+            
+            });
+     });
+
+	$(document).ready(function(){
+		
+		$("#button").click( function()
+           {
+
+           	var album = $.ajax({type: "GET", url: "https://api.spotify.com/v1/search ", async: false}).responseText;
+      
+            //  //alert(msg);
+            //  $( "#Hidden" ).after( msg + "<br>");
+
+        });
+	});
+
+
+
+
+
+
+	
+</script>
+
+</head>
+<body>
+	<header>
+		
+
+	</header>
+	<section>
+		<article>
+			
+			<b>Article Zone</b>
+
+		</article>
+
+	
+
+	<div>
+		<ol>
+			<li>Home</li>
+			<li>Page 1</li>
+			<li>Page 2</li>
+			<li>Page 3</li>
+		</ol>
+	</div>
+
+	<div>
+		<b>Imagen</b><br>
+		<img src="http://www.zurb.com/blog/system/images/999/original/yeti-html5.png?1375490676" alt="No Image Found" width="400" height="400"/><br>
+	</div>
+
+	</section> <br>
+	<section id="Hidden" style="display:none;">Hello Word!</section>
+	<!-- <button type="button">Click Me!</button> -->
+	<input type="submit" value="Submit" id="button"> <br> <br>
+
+	<input type="text" class="alias" name="text"><br>
+
+	
+
+
+
+</body>
