@@ -71,7 +71,7 @@ div.imagen {
 	
 }
 
-p#headline {
+p.headline {
 	position: absolute;
 	font-size: 21px;
 	color: red;
