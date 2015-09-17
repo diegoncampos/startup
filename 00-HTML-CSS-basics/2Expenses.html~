@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<title> Expenses </title> 
+<style>
+table
+{
+   border: 1px solid gray;
+}
+td
+{
+   border: 1px solid gray;
+   bgcolor="green";
+}
+.mes
+{
+   border: 1px solid gray;
+   bgcolor="grey";
+}
+</style>
+</head>
+
+<body>
+Gastos:
+<table>
+<tr>
+<td>Mes</td>
+<td>Alquiler</td>
+<td>Expensas</td>
+<td>Luz</td>
+<td>Agua</td>
+</tr>
+
+<tr>
+<td class="mes">Enero</td>
+<td>$267</td>
+<td>$678</td>
+<td>$654</td>
+<td>$234</td>
+</tr>
+
+<tr>
+<td class="mes">Febrero</td>
+<td>$67</td>
+<td>$87</td>
+<td>$56</td>
+<td>$23</td>
+</tr>
+
+</table>
+
+</body>

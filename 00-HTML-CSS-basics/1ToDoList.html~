@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> My todo list </title> 
+<meta name="list" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+To Do Items:
+<OL>
+<LI>tarea 1
+<LI>tarea 2
+<LI>tarea 5
+<LI>tarea 4
+<LI>tarea 3
+</OL>
+</body>
