@@ -1,0 +1,27 @@
+section {
+    background-color: rgba(73, 153, 231, 0.3);
+    width: 50%;
+    margin: 0 auto;
+    float: left;
+}
+.test {
+    
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+	background-image: url(Media/fondo.jpg);
+}
+
+.highlight { background-color: yellow }
+
+article{
+    float: right;
+    display: block;
+    padding: 0; 
+    padding-right: 50px;
+    margin: 0 auto;
+
+}
+
