@@ -1,33 +1,30 @@
 define(['Director'], function(Director) {
 
+	var Movie = function (title) {
+		this.title = title;
 
-var Movie = function (title) {
-	this.title = title;
+	};
+	Movie.prototype = {
 
-};
-Movie.prototype = {
-	
-	play:function(){ return "Playing: " + this.title + "..."; },
-	stop:function(){ return "Stoping: " + this.title + "..."; },
-	set:function(attr, value){ this[attr] = value; },
-	get:function(attr){
-		console.log(this[attr]); }
-};
+		play:function(){ return "Playing: " + this.title + "..."; },
+		stop:function(){ return "Stoping: " + this.title + "..."; },
+		set:function(attr, value){ this[attr] = value; },
+		get:function(attr){
+			return this[attr]; }
+		};
 
-function extend(destination, source) {
-  for (var k in source) {
-    if (source.hasOwnProperty(k)) {
-      destination[k] = source[k];
-    }
-  }
-  return destination; 
-}
+		function extend(destination, source) {
+			for (var k in source) {
+				if (source.hasOwnProperty(k)) {
+					destination[k] = source[k];
+				}
+			}
+			return destination; 
+		}
 
-extend(Movie.prototype, Director);
+		extend(Movie.prototype, Director);
 
-// module.exports = Movie;
+		return Movie;
 
-return Movie;
-
-});
+	});
 
