@@ -23,7 +23,7 @@ define(function() {
 	};
 
 
-// module.exports = Director;
+return Director;
 
 
 });

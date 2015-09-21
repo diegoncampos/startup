@@ -27,5 +27,7 @@ extend(Movie.prototype, Director);
 
 // module.exports = Movie;
 
+return Movie;
+
 });
 
