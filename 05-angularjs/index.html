@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="appMovie">
+<head>
+	<title>Topic 5 - AngularJS</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+<section ng-controller="movieCtrl">
+		<h1>Movies</h1>
+		<ul ng-repeat="movie in movies">
+			<li>
+				{{'Movie: ' + movie.tittle}}
+			</li>
+		</ul>
+	</section>
+
+</body>
+
+</html>

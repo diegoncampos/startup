@@ -1,0 +1,15 @@
+{
+  "name": "05-angularjs",
+  "version": "1.0.0",
+  "description": "Topic5",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Campos",
+  "license": "ISC",
+   "private": true,
+  "dependencies": {
+    "angular": "^1.4.6"
+  }
+}
