@@ -1,3 +1,40 @@
 body {
-	background-image: url(media/fondo2.jpg);
+	background-image: url(media/fondo3.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+section {
+	font-size: 30px;
+	text-align: left;
+	color: #00E600;
+}
+
+#details {
+	float: right;
+    display: block;
+    padding: 0; 
+    padding-right: 30%;
+    color: yellow;
+
+}
+
+#options{
+	font-size: 20px;
+}
+
+h1 {
+	text-decoration: underline;
+}
+
+#detSub {
+	text-decoration: underline;
+}
+
+button {
+	background: rgba(143, 44, 44, 0.7);
+	border:dashed 0px #000000;
+	font-size: 20px;
 }

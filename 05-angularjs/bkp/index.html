@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="appMovie">
+<head>
+	<title>Topic 5 - AngularJS</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/moviesBD.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+	<section ng-controller="movieCtrl">
+		<h1>Movies</h1>
+
+		<select multiple="multiple" ng-model="details" id="options">
+			<option ng-repeat="movie in movies" value="Tittle: {{movie.tittle}} Director: {{movie.director}}">Movie: {{movie.tittle}}</option>
+
+		</select>
+		
+		<!-- <textarea>{{details}}</textarea> -->
+
+		<section id="details">
+			<h1>Details:</h1>
+			{{details}}
+
+		</section>
+
+	</section>
+
+	<!-- <section id="details">
+		<h1>Details:</h1>
+		<h1>{{details}}</h1>
+		
+	</section> -->
+
+</body>
+
+</html>
