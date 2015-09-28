@@ -41,11 +41,11 @@ app.controller('movieCtrl', function($scope) {
 
 		};
 
-		$scope.deleteMovie = function(){  //working
+		$scope.deleteMovie = function(){  
 
 			var index = $scope.movies.indexOf(selectedMovie);
 
-			var r = confirm("Delete movie?");
+			var r = confirm("Delete " + selectedMovie.tittle +"?");
 			if (r === true) {
 				
 				$scope.movies.splice(index,1); 
@@ -54,21 +54,46 @@ app.controller('movieCtrl', function($scope) {
 				$scope.edDirector = "";
 				$scope.edDuration = "";
 				$scope.edPhoto = "";
+
+
+				cleanDetails();	
+
 			} 
 
 
 		};
 
-		$scope.editMovie = function(movie){   //working
-			$scope.edTittle = movie.tittle;
-			$scope.edDirector = movie.director;
-			$scope.edDuration = movie.duration;
-			$scope.edPhoto = movie.photo;		
-
-		};
-
-		
+		$scope.editMovie = function(){   
 
 
 
-	});
+			for (var i = 0; i< $scope.movies.length; i++){
+				if($scope.movies[i] === selectedMovie) {
+
+					var r = confirm("Edit " + selectedMovie.tittle + "?");
+					if (r === true) {
+
+						$scope.movies[i] = {tittle : $scope.edTittle, 
+							director : $scope.edDirector, 
+							duration : $scope.edDuration, 
+							photo : $scope.edPhoto};
+
+
+							cleanDetails();
+						}
+
+					}
+				}	
+
+			};
+
+			function cleanDetails(){
+				$scope.getDetails = "";
+				$scope.getTittle = "";
+				$scope.getDirector = "";
+				$scope.getDuration = "";
+				$scope.getPhoto = "";	
+			};
+
+
+		});

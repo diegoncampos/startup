@@ -51,7 +51,7 @@
 			Director:  <input type="text" ng-model="edDirector" required><br>
 			Duration:  <input type="text" ng-model="edDuration" required><br>
 			Image URL: <input type="text" ng-model="edPhoto" required><br>
-			<button ng-model="button" ng-click="showEdit = ! showEdit" >Save</button>
+			<button ng-model="button" ng-click="editMovie(); showEdit = ! showEdit" >Save</button>
 			<button ng-model="button" ng-click="deleteMovie(); showEdit = ! showEdit">Delete</button>
 		</div>
 
