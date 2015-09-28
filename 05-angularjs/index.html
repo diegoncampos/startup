@@ -15,11 +15,11 @@
 	<section ng-controller="movieCtrl">
 
 		<section id="details">
-			<p id="detSub">{{details}} </p> 
-			{{tittle}} <br>
-			{{director}} <br>
-			{{duration}} <br><br>
-			<img src={{photo}} alt="Image not Found" width="250" height="250" >
+			<p id="detSub">{{getDetails}} </p> 
+			{{getTittle}} <br>
+			{{getDirector}} <br>
+			{{getDuration}} <br><br>
+			<img src={{getPhoto}}  width="250" height="250" >
 
 		</section>
 
@@ -31,17 +31,28 @@
 			</li>
 		</ul>
 
-		<button ng-model="button" >Edit</button>
-		<button ng-model="button" >Delete</button>
+		<button ng-model="button" ng-click="showEdit = ! showEdit" ng-hide="showAdd">Edit</button>
+		<button ng-model="button" ng-click="showAdd = ! showAdd" ng-hide="showEdit" >New Movie</button>
 		
 		<br><br>
-		Add New Movie
-		<div>
-			Tittle:    <input type="text" name="movieTittle" ng-model="movieTittle" required><br>
-			Director:  <input type="text" name="movieDirector" ng-model="movieDirector" required><br>
-			Duration:  <input type="text" name="movieDuration" ng-model="movieDuration" required><br>
-			Image URL: <input type="text" name="moviePhoto" ng-model="moviePhoto" required><br>
-			<button ng-model="button" ng-click="addMovie()" >Add</button>
+		
+		<div ng-show="showAdd">
+			Add New Movie<br>
+			Tittle:    <input type="text" ng-model="newTittle" placeholder="Tittle" required><br>
+			Director:  <input type="text" ng-model="newDirector" placeholder="Director" required><br>
+			Duration:  <input type="text" ng-model="newDuration" placeholder="Duration" required><br>
+			Image URL: <input type="text" ng-model="newPhoto" placeholder="Photo url" required><br>
+			<button ng-model="button" ng-click="addMovie(); showAdd = ! showAdd" >Add</button>
+		</div>
+
+		<div ng-show="showEdit">
+			Edit Movie<br>
+			Tittle:    <input type="text" ng-model="edTittle" required><br>
+			Director:  <input type="text" ng-model="edDirector" required><br>
+			Duration:  <input type="text" ng-model="edDuration" required><br>
+			Image URL: <input type="text" ng-model="edPhoto" required><br>
+			<button ng-model="button" ng-click="showEdit = ! showEdit" >Save</button>
+			<button ng-model="button" ng-click="deleteMovie(); showEdit = ! showEdit">Delete</button>
 		</div>
 
 
