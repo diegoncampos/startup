@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Topic 7 - HTML5 APIs</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+	<header>
+		<h1>Topic 7</h1>
+	</header>
+
+	<section ng-controller="Ctrl">
+
+		<input type="text" name="fname" ng-model="item" required><br><br>
+
+		<button ng-model="button" ng-click="save()" id="save">Save</button>
+		<button ng-model="button" ng-click="clear()" id="clear">Clear</button>
+
+	</section>
+
+	<br><br><br>
+	<h2>WebSocket Test</h2>  
+	<div id="output"></div>
+</body>
+
+</html>
