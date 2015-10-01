@@ -50,4 +50,4 @@ app.controller('Ctrl', function($scope) {
             window.addEventListener("load", init, false);
 
 
-        });
+ });

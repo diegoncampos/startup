@@ -13,3 +13,7 @@ h2 {
 	color: #848582;
 	border-radius: 15px;
 }
+
+#myCanvas {
+	border:1px solid #c3c3c3;
+}
