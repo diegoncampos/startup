@@ -30,7 +30,8 @@ app.controller('Ctrl', function($scope) {
     var output;  
     function init() { 
         output = document.getElementById("output"); 
-        testWebSocket(); }  
+        testWebSocket(); } 
+
         function testWebSocket() { 
             websocket = new WebSocket(wsUri); 
             websocket.onopen = function(evt) { onOpen(evt) }; 
@@ -49,5 +50,35 @@ app.controller('Ctrl', function($scope) {
             output.appendChild(pre); }  
             window.addEventListener("load", init, false);
 
+    //drag and drop
 
- });
+    function handleFileSelect(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
+          var files = evt.dataTransfer.files; // FileList object.
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+          f.size, ' bytes, last modified: ',
+          f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+          '</li>');
+  }
+  document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+}
+
+function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+}
+
+  // Setup the dnd listeners.
+  var dropZone = document.getElementById('drop_zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+
+
+});
