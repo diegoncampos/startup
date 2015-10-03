@@ -1,0 +1,129 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 48rem;
+  width: 90%;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+
+@media (min-width: 40rem) {
+  .column {
+    float: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+  }
+
+
+  
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.fourth { width: 25%; }
+  .column.flow-opposite { float: right; }  
+}
+
+
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+@media (min-width: 40rem) {
+  .column.flow-opposite { float: right; }
+}
+
+img {
+	 width: 300px; height: 200px; margin: 0 20px;
+	 /*border: 20px solid rgba(0, 0, 0, 0.3);*/
+	 border: 1px solid transparent;
+	 padding:25px;
+	 margin-left: 50x;
+}
+body {
+    background-image: url("Media/fondo.jpg");
+    background-color: #cccccc;
+}
+/*prueba*/
+
+div.imagen {
+	width: 250px; 
+	height: 150px; 
+	
+}
+
+p.headline {
+	position: absolute;
+	font-size: 21px;
+	color: red;
+}
+
+div.info {
+	position: absolute;
+	width: 250px; 
+	height: 150px;
+	background-color: rgba(31, 31, 31, 0.5);
+	-webkit-transition: opacity 0.2s;
+	opacity: 0;
+}
+
+div#imagen1 {background-image: url(Media/img1.jpg); }
+div#imagen2 {background-image: url(Media/img2.jpg); }
+div#imagen3 {background-image: url(Media/img3.jpg); }
+div#imagen4 {background-image: url(Media/img2.jpg); }
+div#imagen5 {background-image: url(Media/img3.jpg); }
+div#imagen6 {background-image: url(Media/img1.jpg); }
+
+
+
+div#imagen1:hover div.info{opacity: 1; }
+div#imagen2:hover div.info{opacity: 1; }
+div#imagen3:hover div.info{opacity: 1; }
+div#imagen4:hover div.info{opacity: 1; }
+div#imagen5:hover div.info{opacity: 1; }
+div#imagen6:hover div.info{opacity: 1; }
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  	div.imagen {
+	width: 200px; 
+	height: 100px;}
+
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+  	div.imagen {
+	width: 200px; 
+	height: 100px;}
+
+}

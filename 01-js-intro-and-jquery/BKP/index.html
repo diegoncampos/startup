@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<head>
+<title>JavaScipt jQuery Test</title>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="jquery.highlight-5.js"></script>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<script type="text/javascript">    
+	$(document).ready(function(){
+
+        $('#Hidden').fadeIn(3000, function(){
+        	$('.alias').focus();
+        });        
+
+    });
+
+	$(document).ready(function(){
+		
+		$("#button").click( function()
+           {
+           	
+			var msg = $.getJSON('http://bootcamp.aws.af.cm/welcome/' + document.getElementById('alias').value, function(datos){
+				
+
+					$( "#Hidden" ).after("<div style='color:peru;'>"+ datos.response + "</div><br>").ready(function(){
+
+					 $('body').highlight(document.getElementById('alias').value);
+
+					});
+
+
+			     });
+			
+			msg.error(function(){
+
+				$( "#Hidden" ).css("color", "red").after( "<p style='color:red'>Error! Check the url!</p>" + "<br>");
+
+				});
+            
+            });
+     });
+
+		
+</script>
+
+</head>
+<body>
+	<header>
+		
+
+	</header>
+
+	<article> 
+	<h5>&nbsp;</h5> <!-- To avoid Warning Validator -->
+	<h3 style="color:yellow;">Search in Spotify</h3>
+	<b style="color:yellow;">Search for an artist:</b><br>
+	<input type="text" name="search" id="name">
+	<input type="submit" value="Buscar" id="buscar"> <br> 
+
+	<div id="album" style="color:yellow"> <br><ins>Albums:</ins> <br><br></div>
+
+	</article>
+
+	<section>
+	<h5>&nbsp;</h5> <!-- To avoid Warning Validator -->
+		<article>
+			<h5>&nbsp;</h5> <!-- To avoid Warning Validator -->
+			<b>Article Zone - Topic 1</b>
+
+		</article>	
+
+	<div>
+		<ol>
+			<li>Home</li>
+			<li>JS</li>
+			<li>JSON </li>
+			<li>JQUERY</li>
+		</ol>
+	</div>
+
+	
+		<b>Imagen</b><br>
+		<img class="test" src="http://www.zurb.com/blog/system/images/999/original/yeti-html5.png?1375490676" alt="No Image Found" width="400" height="400"/><br>
+	
+	<br>
+	<br>
+
+	<section id="Hidden" style="display:none; font-size:180%; text-align:center">   Hello Word!    
+	<h5>&nbsp;</h5> <!-- To avoid Warning Validator --></section>
+	<br>
+	<br>
+	<input type="text" class="alias" id="alias" name="text"><br> <br>
+	<input type="submit" value="Submit" id="button"> <br> <br>
+	<br>
+
+	</section> <br>
+	
+	<script type="text/javascript">
+		var searchAlbums = function (name) {
+    		$.ajax({
+        	url: 'https://api.spotify.com/v1/search',
+        	type: "GET",
+        	dataType: "json",
+        	data: {
+            	q: name,
+           		 type: 'album'
+        		  },
+        		success: function (source) {
+        			        			
+        				for(items in source.albums.items){
+        					$('#album').append("Album Name: " + source.albums.items[items].name + "<br>" 
+        						+ "Type: " + source.albums.items[items].type + "<br>" 
+        						+ "<a href='" + source.albums.items[items].external_urls.spotify + "'>Link</a><br><br>"
+        						+ "<img src='" + source.albums.items[items].images[2].url +"' alt='No Image Found' height='100px' width='100px'><br>"        						
+        						+ "__________________________________________<br>"        						
+        						);
+        				}
+
+
+        			}, //close success
+            	
+        			
+        		error: function(dato){
+        			alert("Error!! Bad Spotify url");
+        		    }	
+    			});
+		};
+
+
+		
+
+		$("#buscar").click(function(){
+
+			searchAlbums(document.getElementById('name').value);
+		});
+
+
+	</script>
+
+
+
+</body>

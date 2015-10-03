@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<title>Prueba Media </title> 
+
+
+</head>
+
+<body>
+Test Image:<br>
+<i>This is a test Image.</i><br>
+<img src="http://www.zurb.com/blog/system/images/999/original/yeti-html5.png?1375490676" alt="No Image Found" width="400" height="400"/><br>
+
+Test Video:<br>
+<i>This is a test Video.</i><br>
+<video width="400" height="400" preload controls id="vid">
+  <source src="video.mp4" type="video/mp4">
+  <track kind="captions" src="captions.vtt" srclang="en">
+</video><br>
+Test Sound:<br>
+<i>This is a test Sound.</i><br>
+<audio src="audio.mp3" preload="auto" controls></audio>
+<br>
+</body>
