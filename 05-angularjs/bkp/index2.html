@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="appMovie">
+<head>
+	<title>Topic 5 - AngularJS</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/moviesBD.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+	<section ng-controller="movieCtrl">
+		<h1>Movies</h1>
+
+		
+
+		<!-- <textarea>{{details}}</textarea> -->
+
+		<select ng-model="selectedMovie" ng-options="movie as movie.tittle for movie in movies track by movie.tittle" >
+			<option value="">--Select Movie--</option>
+		</select>
+		<br>
+
+		<section id="details">
+			<p>Tittle: {{selectedMovie.tittle}}</p>
+			<p>Director: {{selectedMovie.director}}</p>
+			<p>Duracion: {{selectedMovie.duration}}</p>
+			<img src={{selectedMovie.photo}} alt="Image not Found" width="200" height="200">
+		</section>
+
+	</section>
+
+	<!-- <section id="details">
+		<h1>Details:</h1>
+		<h1>{{details}}</h1>
+		
+	</section> -->
+
+</body>
+
+</html>

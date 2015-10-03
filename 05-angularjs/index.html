@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="appMovie">
+<head>
+	<title>Topic 5 - AngularJS</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/moviesBD.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+	<section ng-controller="movieCtrl">
+
+		<section id="details">
+			<p id="detSub">{{getDetails}} </p> 
+			{{getTittle}} <br>
+			{{getDirector}} <br>
+			{{getDuration}} <br><br>
+			<img src={{getPhoto}}  width="250" height="250" >
+
+		</section>
+
+		<h1>My Favorite Movies</h1>
+
+		<ul>
+			<li ng-repeat="movie in movies" ng-click='get(movie)' id="moviesList">
+				{{movie.tittle}}  
+			</li>
+		</ul>
+
+		<button ng-model="button" ng-click="showEdit = ! showEdit" ng-hide="showAdd" id="editButton">Edit Selected</button>
+		<button ng-model="button" ng-click="showAdd = ! showAdd" ng-hide="showEdit" id="newButton">New Movie</button>
+		
+		<br><br>
+		
+		<div ng-show="showAdd">
+			Add New Movie<br>
+			Tittle:    <input type="text" ng-model="newTittle" placeholder="Tittle" required><br>
+			Director:  <input type="text" ng-model="newDirector" placeholder="Director" required><br>
+			Duration:  <input type="text" ng-model="newDuration" placeholder="Duration" required><br>
+			Image URL: <input type="text" ng-model="newPhoto" placeholder="Photo url" required><br><br>
+			<button ng-model="button" ng-click="addMovie(); showAdd = ! showAdd" id="adButton" >Add</button>
+		</div>
+
+		<div ng-show="showEdit">
+			Edit Movie<br>
+			Tittle:    <input type="text" ng-model="edTittle" required><br>
+			Director:  <input type="text" ng-model="edDirector" required><br>
+			Duration:  <input type="text" ng-model="edDuration" required><br>
+			Image URL: <input type="text" ng-model="edPhoto" required><br><br>
+			<button ng-model="button" ng-click="editMovie(); showEdit = ! showEdit" id="saveButton">Save Changes</button>
+			<button ng-model="button" ng-click="deleteMovie(); showEdit = ! showEdit" id="deleteButton" >Delete Movie</button>
+		</div>
+
+
+
+	</section>
+
+
+</body>
+
+</html>

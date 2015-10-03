@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="appMovie">
+<head>
+	<title>Topic 5 - AngularJS</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/moviesBD.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+	<section ng-controller="movieCtrl">
+
+		<section id="details">
+			<p id="detSub">{{details}} </p> 
+			{{tittle}} <br>
+			{{director}} <br>
+			{{duration}} <br><br>
+			<img src={{photo}} alt="Image not Found" width="250" height="250" >
+
+		</section>
+
+		<h1>Movies</h1>
+
+		<ul>
+			<li ng-repeat="movie in movies" ng-click='get(movie)'>
+				{{movie.tittle}}  
+			</li>
+		</ul>
+
+		
+
+	</section>
+
+
+</body>
+
+</html>

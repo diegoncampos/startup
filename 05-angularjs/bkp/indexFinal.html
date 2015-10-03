@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="appMovie">
+<head>
+	<title>Topic 5 - AngularJS</title>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/moviesBD.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+
+	<section ng-controller="movieCtrl">
+
+		<section id="details">
+			<p id="detSub">{{details}} </p> 
+			{{tittle}} <br>
+			{{director}} <br>
+			{{duration}} <br><br>
+			<img src={{photo}} alt="Image not Found" width="250" height="250" >
+
+		</section>
+
+		<h1>Movies</h1>
+
+		<ul>
+			<li ng-repeat="movie in movies" ng-click='get(movie)'>
+				{{movie.tittle}}  
+			</li>
+		</ul>
+
+		<button ng-model="button" >Edit</button>
+		<button ng-model="button" >Delete</button>
+		
+		<br><br>
+		Add New Movie
+		<div>
+			Tittle:    <input type="text" name="movieTittle" ng-model="movieTittle" required><br>
+			Director:  <input type="text" name="movieDirector" ng-model="movieDirector" required><br>
+			Duration:  <input type="text" name="movieDuration" ng-model="movieDuration" required><br>
+			Image URL: <input type="text" name="moviePhoto" ng-model="moviePhoto" required><br>
+			<button ng-model="button" ng-click="addMovie()" >Add</button>
+		</div>
+
+
+
+	</section>
+
+
+</body>
+
+</html>
