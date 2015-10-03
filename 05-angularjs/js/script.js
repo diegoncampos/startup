@@ -4,6 +4,16 @@ var selectedMovie = "";
 app.controller('movieCtrl', function($scope) {
 	$scope.movies = movies;
 
+	// if(localStorage.getItem('data')){
+	// $scope.movies = localStorage.getItem('data');
+	// console.log(localStorage.getItem('data'));
+	
+ //     }
+
+ // // var pelis = localStorage.getItem('data');
+ // // alert(pelis)
+
+
 	$scope.selectedMovie={
 		tittle:"",
 		nombre:""
@@ -23,6 +33,8 @@ app.controller('movieCtrl', function($scope) {
 
 		selectedMovie = movie;
 
+
+
 	};
 
 	$scope.addMovie = function(){
@@ -39,6 +51,7 @@ app.controller('movieCtrl', function($scope) {
 			$scope.newDuration = "";
 			$scope.newPhoto = "";
 
+			localStorage.setItem('data', JSON.stringify($scope.movies));
 		};
 
 		$scope.deleteMovie = function(){  
